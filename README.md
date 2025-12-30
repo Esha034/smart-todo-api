@@ -1,10 +1,10 @@
-# 📝 Smart ToDo API
+#  Smart ToDo API
 
 A secure RESTful backend API for task management built using **FastAPI**, **MongoDB Atlas**, and **JWT Authentication**.
 
 ---
 
-## 🚀 Features
+##  Features
 - User registration and login
 - JWT-based authentication
 - Protected CRUD APIs for tasks
@@ -13,7 +13,7 @@ A secure RESTful backend API for task management built using **FastAPI**, **Mong
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 - Python
 - FastAPI
 - MongoDB Atlas
@@ -23,7 +23,7 @@ A secure RESTful backend API for task management built using **FastAPI**, **Mong
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 smart-todo-api/
 ├── main.py
 ├── auth.py
@@ -42,18 +42,18 @@ smart-todo-api/
 ##  Installation & Setup
 
 ### 1️⃣ Clone the Repository
-```bash
+
 git clone https://github.com/<your-username>/smart-todo-api.git
 cd smart-todo-api
-2️⃣ Create Virtual Environment
+### 2️⃣ Create Virtual Environment
 
 python -m venv venv
 venv\Scripts\activate   # Windows
 source venv/bin/activate  # macOS/Linux
-3️⃣ Install Dependencies
+### 3️⃣ Install Dependencies
 
 pip install -r requirements.txt
-4️⃣ Environment Variables Setup
+### 4️⃣ Environment Variables Setup
 Create a .env file using the template:
 
 cp .env.example .env
@@ -69,7 +69,7 @@ uvicorn main:app --reload
 Open Swagger UI:
 
 http://127.0.0.1:8000/docs
-🔐 API Endpoints
+##  API Endpoints
 Authentication
 POST /register
 
@@ -84,19 +84,12 @@ PUT /tasks/{id}
 
 DELETE /tasks/{id}
 
-🧪 Testing
+## Testing
 -Swagger UI
 
 -PowerShell curl
 
 -Postman
-
-📌 Notes
-JWT token must be passed in header:
-
-
-Copy code
-Authorization: Bearer <access_token>
 
 👩‍💻 Author
 Eshani
