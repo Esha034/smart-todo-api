@@ -84,19 +84,20 @@ Open Swagger UI:
 
 http://127.0.0.1:8000/docs
 ##  API Endpoints
+
 Authentication
-POST /register
 
-POST /login
+-POST /register
 
-Tasks (JWT Protected)
-POST /tasks
+-POST /login
 
-GET /tasks
+-POST /tasks
 
-PUT /tasks/{id}
+-GET /tasks
 
-DELETE /tasks/{id}
+-PUT /tasks/{id}
+
+-DELETE /tasks/{id}
 
 ## Testing
 -Swagger UI
