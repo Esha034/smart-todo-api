@@ -26,9 +26,13 @@ A secure RESTful backend API for task management built using **FastAPI**, **Mong
 ##  Project Structure
 smart-todo-api/
 ├── main.py
+
 ├── auth.py
+
 ├── database.py
+
 ├── models.py
+
 ├── dependencies.py
 ├── routes/
 │ ├── user_routes.py
