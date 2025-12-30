@@ -51,29 +51,33 @@ smart-todo-api/
 
 ##  Installation & Setup
 
-### 1️⃣ Clone the Repository
+### 1️. Clone the Repository
 
 git clone https://github.com/<your-username>/smart-todo-api.git
 cd smart-todo-api
-### 2️⃣ Create Virtual Environment
+### 2️. Create Virtual Environment
 
 python -m venv venv
 venv\Scripts\activate   # Windows
 source venv/bin/activate  # macOS/Linux
-### 3️⃣ Install Dependencies
+### 3️. Install Dependencies
 
 pip install -r requirements.txt
-### 4️⃣ Environment Variables Setup
+### 4️. Environment Variables Setup
 Create a .env file using the template:
 
 cp .env.example .env
 Fill in your values:
 
 MONGO_URI=your_mongodb_connection_string
+
 SECRET_KEY=your_secret_key
+
 ALGORITHM=HS256
+
 ACCESS_TOKEN_EXPIRE_MINUTES=30
-5️⃣ Run the Application
+
+### 5️. Run the Application
 
 uvicorn main:app --reload
 Open Swagger UI:
