@@ -38,6 +38,7 @@ smart-todo-api/
 ├── routes/
 
 │ ├── user_routes.py
+
 │ ├── task_routes.py
 
 ├── .env.example
