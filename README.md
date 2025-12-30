@@ -34,11 +34,16 @@ smart-todo-api/
 ├── models.py
 
 ├── dependencies.py
+
 ├── routes/
+
 │ ├── user_routes.py
 │ ├── task_routes.py
+
 ├── .env.example
+
 ├── requirements.txt
+
 ├── README.md
 
 ---
