@@ -1,111 +1,164 @@
-#  Smart ToDo API
+# Smart ToDo API
+## Project Overview
 
-A secure RESTful backend API for task management built using **FastAPI**, **MongoDB Atlas**, and **JWT Authentication**.
+Smart ToDo API is a secure and scalable RESTful backend service designed to manage personal tasks efficiently.
+It allows users to register, authenticate, and manage their tasks using JWT-based authentication.
 
----
+This project demonstrates real-world backend development skills, including authentication, database integration, protected routes, and API documentation using Swagger.
 
-##  Features
-- User registration and login
-- JWT-based authentication
-- Protected CRUD APIs for tasks
-- MongoDB Atlas integration
-- Swagger API documentation
+🎯 Objective 
 
----
+In many productivity applications, users need a secure and reliable backend to:
+
+Create and manage personal tasks
+
+Ensure data privacy between users
+
+Authenticate users securely
+
+Perform CRUD operations efficiently
+
+Smart ToDo API solves this by providing a JWT-secured task management backend, suitable for real-world applications like productivity apps, team dashboards, or SaaS platforms.
+
+## Key Features
+
+User Registration & Login
+
+JWT Authentication & Authorization
+
+Protected Task CRUD APIs
+
+MongoDB Atlas integration
+
+Swagger (OpenAPI) documentation
+
+Clean, modular project structure
 
 ## Tech Stack
-- Python
-- FastAPI
-- MongoDB Atlas
-- JWT (python-jose)
-- Passlib (bcrypt)
-- Uvicorn
+| Category           | Technology                 |
+| ------------------ | -------------------------- |
+| Backend Framework  | FastAPI                    |
+| Language           | Python                     |
+| Authentication     | JWT (OAuth2PasswordBearer) |
+| Database           | MongoDB Atlas              |
+| ODM                | PyMongo                    |
+| Security           | Passlib (bcrypt)           |
+| Environment Config | python-dotenv              |
+| API Documentation  | Swagger UI                 |
 
----
-
-##  Project Structure
+📂 Project Structure
 smart-todo-api/
-├── main.py
-
-├── auth.py
-
-├── database.py
-
-├── models.py
-
-├── dependencies.py
-
+│
+├── main.py                 # FastAPI app entry point
+├── database.py             # MongoDB connection setup
+├── auth.py                 # JWT & password utilities
+├── models.py               # Pydantic models
+├── dependencies.py         # Auth dependencies
+├── test_db.py              # DB connection test
+├── test_auth.py            # Auth utilities test
+│
 ├── routes/
+│   ├── user_routes.py      # Register & Login APIs
+│   ├── task_routes.py      # Protected Task APIs
+│
+├── .env                    # Environment variables (ignored)
+├── .env.example            # Sample environment config
+├── requirements.txt        # Dependencies
+├── README.md               # Project documentation
 
-│ ├── user_routes.py
 
-│ ├── task_routes.py
+⚙️ Installation & Local Setup
+1️ Clone the Repository
 
-├── .env.example
-
-├── requirements.txt
-
-├── README.md
-
----
-
-##  Installation & Setup
-
-### 1️. Clone the Repository
-
-git clone https://github.com/<your-username>/smart-todo-api.git
+git clone https://github.com/your-username/smart-todo-api.git
 cd smart-todo-api
-### 2️. Create Virtual Environment
 
+
+
+
+2️⃣ Create & Activate Virtual Environment
 python -m venv venv
 venv\Scripts\activate   # Windows
-source venv/bin/activate  # macOS/Linux
-### 3️. Install Dependencies
 
+3️⃣ Install Dependencies
 pip install -r requirements.txt
-### 4️. Environment Variables Setup
-Create a .env file using the template:
 
-cp .env.example .env
-Fill in your values:
+4️⃣ Setup Environment Variables
 
-MONGO_URI=your_mongodb_connection_string
+Create a .env file using .env.example:
 
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/smart_todo_db
 SECRET_KEY=your_secret_key
-
 ALGORITHM=HS256
-
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-### 5️. Run the Application
-
+5️⃣ Run the Application
 uvicorn main:app --reload
-Open Swagger UI:
 
-http://127.0.0.1:8000/docs
-##  API Endpoints
+📘 API Documentation (Swagger)
 
-Authentication
+Once the server is running, open:
 
--POST /register
+👉 http://127.0.0.1:8000/docs
 
--POST /login
+This provides:
 
--POST /tasks
+Interactive API testing
 
--GET /tasks
+Request/response schemas
 
--PUT /tasks/{id}
+Authorization support
 
--DELETE /tasks/{id}
+🔐 API Endpoints
+🔑 Authentication
 
-## Testing
--Swagger UI
+POST /register
+Registers a new user.
 
--PowerShell curl
+{
+  "name": "Eshani",
+  "email": "eshani@gmail.com",
+  "password": "test1234"
+}
 
--Postman
 
-👩‍💻 Author
-Eshani
+POST /login
+Authenticates user and returns JWT token.
 
+{
+  "email": "eshani@gmail.com",
+  "password": "test1234"
+}
+
+
+Response:
+
+{
+  "access_token": "eyJhbGciOi...",
+  "token_type": "bearer"
+}
+
+✅ Tasks (JWT Protected)
+
+All task routes require
+Authorization: Bearer <ACCESS_TOKEN>
+
+POST /tasks – Create a task
+
+{
+  "title": "First Task",
+  "description": "My first protected task"
+}
+
+
+GET /tasks – Fetch all user tasks
+
+PUT /tasks/{id} – Update a task
+
+{
+  "title": "Updated Title",
+  "completed": true
+}
+
+
+DELETE /tasks/{id} – Delete a task
