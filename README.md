@@ -54,15 +54,11 @@ smart-todo-api/
 ├── database.py             # MongoDB connection setup
 ├── auth.py                 # JWT & password utilities
 ├── models.py               # Pydantic models
-├── dependencies.py         # Auth dependencies
-├── test_db.py              # DB connection test
-├── test_auth.py            # Auth utilities test
 │
 ├── routes/
 │   ├── user_routes.py      # Register & Login APIs
 │   ├── task_routes.py      # Protected Task APIs
 │
-├── .env                    # Environment variables (ignored)
 ├── .env.example            # Sample environment config
 ├── requirements.txt        # Dependencies
 ├── README.md               # Project documentation
